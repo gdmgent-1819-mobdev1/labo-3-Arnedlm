@@ -20,7 +20,6 @@ class Person {
         this.place = place;
         this.url = url;
     }
-    
 }
 
 function fetchAPI(i){
@@ -136,9 +135,6 @@ function makeList(){
     }
     
 }
-function makeDisLike(key){
-
-}
 function makeLayOut(){
     let h1 = document.createElement('H1');
     let title = document.createTextNode('Tinder');
@@ -236,14 +232,14 @@ function showMap(){
         container: 'map', // HTML container id
         style: 'mapbox://styles/mapbox/streets-v9', // style URL
         center: [showDataFromLocalStorage(n).place.longitude, showDataFromLocalStorage(n).place.latitude], // starting position as [lng, lat]
-        zoom: 13
+        zoom: 10
       });
     let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-right');
     map.className = "";
 }
 function hideMap(){
-    map.className = "hide";
+    map.style.display = "none";
 }
 localStorage.clear();
 makeLayOut();
